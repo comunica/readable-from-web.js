@@ -1,8 +1,8 @@
-.husky/_
 .yarn
 coverage
 test-results
 node_modules
-lib/*.js
-lib/*.js.map
-lib/*.d.ts
+
+*.d.ts
+*.js
+*.js.map

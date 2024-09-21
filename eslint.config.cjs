@@ -5,13 +5,14 @@ module.exports = config([
     files: [ '**/*.ts' ],
     languageOptions: {
       parserOptions: {
-        tsconfigRootDir: __dirname,
         project: [ 'tsconfig.eslint.json' ],
       },
     },
   },
   {
-    files: [ 'webpack.config.js' ],
+    files: [
+      'webpack.config.ts',
+    ],
     rules: {
       'import/no-nodejs-modules': 'off',
     },
