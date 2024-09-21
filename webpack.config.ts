@@ -1,11 +1,11 @@
-const path = require('node:path');
+import { resolve } from 'node:path';
+import type { WebpackConfiguration } from 'webpack-dev-server';
 
-/** @type {import('webpack').Configuration} */
-module.exports = {
+const config: WebpackConfiguration = {
   devServer: {
     port: 4000,
     host: 'localhost',
-    static: path.resolve(__dirname),
+    static: resolve(__dirname),
   },
   entry: {
     index: './lib/index.ts',
@@ -27,6 +27,8 @@ module.exports = {
   output: {
     library: '[name]',
     filename: '[name].js',
-    path: path.resolve(__dirname, 'dist'),
+    path: resolve(__dirname, 'dist'),
   },
 };
+
+export default config;
