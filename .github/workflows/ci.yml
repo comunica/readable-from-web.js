@@ -11,7 +11,7 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  DEFAULT_NODE_VERSION: 22.x
+  DEFAULT_NODE_VERSION: 23.x
 
 jobs:
 
@@ -39,6 +39,7 @@ jobs:
           - 18.x
           - 20.x
           - 22.x
+          - 23.x
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
