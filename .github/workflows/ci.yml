@@ -1,15 +1,19 @@
 name: CI
 
 on:
-  - push
-  - pull_request
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 env:
-  DEFAULT_NODE_VERSION: 23.x
+  DEFAULT_NODE_VERSION: 24.x
 
 jobs:
 
@@ -37,7 +41,7 @@ jobs:
           - 18.x
           - 20.x
           - 22.x
-          - 23.x
+          - 24.x
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
