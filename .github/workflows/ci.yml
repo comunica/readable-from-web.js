@@ -20,16 +20,13 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
         with:
+          cache: yarn
           node-version: ${{ env.DEFAULT_NODE_VERSION }}
-      - uses: actions/cache@v4
-        with:
-          path: .yarn
-          key: ${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
       - run: corepack enable
-      - run: yarn install --immutable
+      - run: yarn install --frozen-lockfile --ignore-scripts
       - run: yarn run lint
 
   node:
@@ -43,16 +40,13 @@ jobs:
           - 22.x
           - 24.x
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
         with:
+          cache: yarn
           node-version: ${{ matrix.node-version }}
-      - uses: actions/cache@v4
-        with:
-          path: .yarn
-          key: ${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
       - run: corepack enable
-      - run: yarn install --immutable
+      - run: yarn install --frozen-lockfile --ignore-scripts
       - run: yarn run build
       - run: yarn run test
       - uses: coverallsapp/github-action@v2
@@ -71,16 +65,13 @@ jobs:
           - chromium
           - webkit
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
         with:
+          cache: yarn
           node-version: ${{ env.DEFAULT_NODE_VERSION }}
-      - uses: actions/cache@v4
-        with:
-          path: .yarn
-          key: ${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
       - run: corepack enable
-      - run: yarn install --immutable
+      - run: yarn install --frozen-lockfile --ignore-scripts
       - run: yarn playwright install --with-deps ${{ matrix.browser }}
       - run: yarn playwright test --browser ${{ matrix.browser }}
 
