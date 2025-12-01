@@ -15,24 +15,21 @@ permissions:
   id-token: write
 
 env:
-  DEFAULT_NODE_VERSION: 23.x
+  DEFAULT_NODE_VERSION: 24.x
 
 jobs:
 
   publish:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
         with:
+          cache: yarn
           node-version: ${{ env.DEFAULT_NODE_VERSION }}
           registry-url: https://registry.npmjs.org
-      - uses: actions/cache@v4
-        with:
-          path: .yarn
-          key: ${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
       - run: corepack enable
-      - run: yarn install --immutable
+      - run: yarn install --frozen-lockfile --ignore-scripts
       - run: yarn run build
       # TODO: when Yarn supports --provenance, switch to "yarn publish"
       - run: yarn pack
