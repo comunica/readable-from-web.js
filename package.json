@@ -1,11 +1,13 @@
 {
   "name": "readable-from-web",
-  "type": "module",
+  "type": "commonjs",
   "version": "1.0.0",
   "packageManager": "yarn@4.12.0",
   "description": "Experimental converter from WHATWG ReadableStream to readable-stream Readable",
   "license": "MIT",
   "homepage": "https://github.com/comunica/readable-from-web.js",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/comunica/readable-from-web.js.git"
@@ -13,19 +15,14 @@
   "bugs": {
     "url": "https://github.com/comunica/readable-from-web/issues"
   },
-  "exports": {
-    ".": {
-      "import": "./dist/index.js",
-      "require": "./dist/index.umd.cjs"
-    }
-  },
-  "types": "lib/index",
   "files": [
-    "dist/*"
+    "lib/*.d.ts",
+    "lib/*.js",
+    "lib/*.js.map"
   ],
   "scripts": {
     "lint": "eslint .",
-    "build": "vite build",
+    "build": "tsc --project ./tsconfig.build.json",
     "test": "vitest run --project node"
   },
   "dependencies": {
@@ -44,12 +41,6 @@
     "streamify-string": "^1.0.0",
     "typescript": "^5.0.0",
     "typescript-eslint": "^8.0.0",
-    "unplugin-dts": "^1.0.0-beta.6",
-    "vite": "*",
     "vitest": "^4.0.0"
-  },
-  "resolutions": {
-    "rolldown": "^1.0.0-rc.7",
-    "vite": "^8.0.0-beta.16"
   }
 }

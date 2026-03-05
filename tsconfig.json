@@ -1,24 +1,8 @@
 {
-  "compilerOptions": {
-    "target": "es2023",
-    "lib": [
-      "ES2023",
-      "DOM"
-    ],
-    "module": "preserve",
-    "moduleResolution": "bundler",
-    "strict": true,
-    "noImplicitAny": true,
-    "importHelpers": false,
-    "inlineSources": false,
-    "removeComments": true
-  },
+  "extends": "./tsconfig.build.json",
   "include": [
     "./*.ts",
-    "./lib/*.ts",
-    "./test/*.ts"
-  ],
-  "exclude": [
-    "./lib/*.d.ts"
+    "lib/*.ts",
+    "test/*.ts"
   ]
 }

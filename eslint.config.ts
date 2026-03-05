@@ -1,18 +1,20 @@
 /* eslint-disable @typescript-eslint/no-magic-numbers */
 /* eslint-disable @typescript-eslint/naming-convention */
 
-import { defineConfig, globalIgnores } from 'eslint/config'
 import { configs } from '@eslint/js'
+import { defineConfig } from 'eslint/config'
 import tseslint from 'typescript-eslint'
 
 export default defineConfig(
   configs.all,
   tseslint.configs.all,
-  globalIgnores([
-    '**/coverage/',
-    '**/dist/',
-    '**/node_modules/'
-  ]),
+  {
+    ignores: [
+      './coverage/',
+      './dist/',
+      './node_modules/'
+    ]
+  },
   {
     languageOptions: {
       parserOptions: {
