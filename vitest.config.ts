@@ -1,4 +1,4 @@
-import { compilerOptions } from './tsconfig.base.json'
+import { compilerOptions } from './tsconfig.build.json'
 import { defineConfig } from 'vitest/config'
 import { playwright } from '@vitest/browser-playwright'
 
