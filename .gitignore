@@ -1,8 +1,4 @@
-.yarn
-coverage
-test-results
-node_modules
-
-*.d.ts
-*.js
-*.js.map
+.yarn/
+dist/
+coverage/
+node_modules/
