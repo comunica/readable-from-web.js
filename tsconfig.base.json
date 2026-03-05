@@ -12,7 +12,8 @@
     "noImplicitAny": true,
     "importHelpers": false,
     "inlineSources": false,
-    "removeComments": true
+    "removeComments": true,
+    "resolveJsonModule": true
   },
   "include": [
     "./lib/*.ts"

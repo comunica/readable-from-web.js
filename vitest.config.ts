@@ -1,3 +1,4 @@
+import { compilerOptions } from './tsconfig.base.json'
 import { defineConfig } from 'vitest/config'
 import { playwright } from '@vitest/browser-playwright'
 
@@ -8,6 +9,10 @@ const browsers: ('chromium' | 'firefox' | 'webkit')[] = [
 ]
 
 export default defineConfig({
+  build: {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
+    target: compilerOptions.target
+  },
   test: {
     projects: [
       ...browsers.map(browser => ({
