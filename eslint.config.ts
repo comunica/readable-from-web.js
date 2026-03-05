@@ -9,6 +9,7 @@ export default defineConfig(
   configs.all,
   tseslint.configs.all,
   globalIgnores([
+    '**/coverage/',
     '**/dist/',
     '**/node_modules/'
   ]),
