@@ -1,1 +1,1 @@
-export { readableFromWeb } from './ReadableFromWeb';
+export { readableFromWeb } from './ReadableFromWeb'

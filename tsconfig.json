@@ -1,23 +1,22 @@
 {
-  "compileOnSave": true,
   "compilerOptions": {
-    "target": "es2021",
+    "target": "es2023",
     "lib": [
-      "es2021",
-      "dom"
+      "ES2023",
+      "DOM"
     ],
-    "module": "commonjs",
+    "module": "preserve",
+    "moduleResolution": "bundler",
     "strict": true,
     "noImplicitAny": true,
-    "declaration": true,
     "importHelpers": false,
-    "inlineSources": true,
-    "preserveConstEnums": true,
-    "removeComments": false,
-    "sourceMap": true
+    "inlineSources": false,
+    "removeComments": true
   },
   "include": [
-    "./lib/*.ts"
+    "./*.ts",
+    "./lib/*.ts",
+    "./test/*.ts"
   ],
   "exclude": [
     "./lib/*.d.ts"

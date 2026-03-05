@@ -1,0 +1,34 @@
+{
+  "name": "Alpine Linux Node 24",
+  "build": {
+    "dockerfile": "./Dockerfile"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "github.vscode-github-actions",
+        "ms-azuretools.vscode-containers"
+      ],
+      "settings": {
+        "chat.disableAIFeatures": true,
+        "editor.formatOnSave": true,
+        "eslint.format.enable": true,
+        "eslint.validate": [
+          "javascript",
+          "json",
+          "typescript"
+        ],
+        "[javascript]": {
+          "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+        },
+        "[json]": {
+          "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+        },
+        "[typescript]": {
+          "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+        }
+      }
+    }
+  }
+}
