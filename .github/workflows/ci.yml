@@ -23,10 +23,9 @@ jobs:
       - uses: actions/checkout@v6
       - uses: actions/setup-node@v6
         with:
-          cache: yarn
           node-version: ${{ env.DEFAULT_NODE_VERSION }}
       - run: corepack enable
-      - run: yarn install --frozen-lockfile --ignore-scripts
+      - run: yarn install --immutable
       - run: yarn run lint
 
   node:
@@ -43,16 +42,15 @@ jobs:
       - uses: actions/checkout@v6
       - uses: actions/setup-node@v6
         with:
-          cache: yarn
           node-version: ${{ matrix.node-version }}
       - run: corepack enable
-      - run: yarn install --frozen-lockfile --ignore-scripts
+      - run: yarn install --immutable
       - run: yarn run build
-      - run: yarn run test
+      - run: yarn vitest run --project node --coverage
       - uses: coverallsapp/github-action@v2
         with:
           github-token: ${{ secrets.github_token }}
-          flag-name: run-${{ matrix.node-version }}
+          flag-name: node-${{ matrix.node-version }}
           parallel: true
 
   browser:
@@ -61,27 +59,31 @@ jobs:
     strategy:
       matrix:
         browser:
-          - firefox
           - chromium
+          - firefox
           - webkit
     steps:
       - uses: actions/checkout@v6
       - uses: actions/setup-node@v6
         with:
-          cache: yarn
           node-version: ${{ env.DEFAULT_NODE_VERSION }}
       - run: corepack enable
-      - run: yarn install --frozen-lockfile --ignore-scripts
+      - run: yarn install --immutable
+      - run: yarn run build
       - run: yarn playwright install --with-deps ${{ matrix.browser }}
-      - run: yarn playwright test --browser ${{ matrix.browser }}
+      - run: yarn vitest run --project ${{ matrix.browser }} --coverage
+      - uses: coverallsapp/github-action@v2
+        with:
+          github-token: ${{ secrets.github_token }}
+          flag-name: browser-${{ matrix.browser }}
+          parallel: true
 
   coveralls:
     needs:
       - node
     runs-on: ubuntu-latest
     steps:
-      - name: Consolidate test coverage from different jobs
-        uses: coverallsapp/github-action@v2
+      - uses: coverallsapp/github-action@v2
         with:
           github-token: ${{ secrets.github_token }}
           parallel-finished: true
