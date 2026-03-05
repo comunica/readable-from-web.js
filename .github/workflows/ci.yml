@@ -80,6 +80,7 @@ jobs:
   coveralls:
     needs:
       - node
+      - browser
     runs-on: ubuntu-latest
     steps:
       - uses: coverallsapp/github-action@v2
