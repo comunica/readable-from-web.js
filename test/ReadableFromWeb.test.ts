@@ -1,6 +1,4 @@
-/* eslint-disable @typescript-eslint/no-unsafe-type-assertion */
 /* eslint-disable @typescript-eslint/no-require-imports */
-/* eslint-disable @typescript-eslint/prefer-readonly-parameter-types */
 
 import { expect, test } from 'vitest'
 import type { Readable } from 'readable-stream'

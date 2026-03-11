@@ -11,7 +11,6 @@ const browsers: ('chromium' | 'firefox' | 'webkit')[] = [
 export default defineConfig({
   build: {
     minify: false,
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
     target: compilerOptions.target
   },
   test: {
