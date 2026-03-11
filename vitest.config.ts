@@ -1,4 +1,3 @@
-import { compilerOptions } from './tsconfig.build.json'
 import { defineConfig } from 'vitest/config'
 import { playwright } from '@vitest/browser-playwright'
 
@@ -11,7 +10,7 @@ const browsers: ('chromium' | 'firefox' | 'webkit')[] = [
 export default defineConfig({
   build: {
     minify: false,
-    target: compilerOptions.target
+    target: 'ES2023'
   },
   test: {
     projects: [

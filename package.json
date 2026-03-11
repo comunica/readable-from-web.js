@@ -1,6 +1,6 @@
 {
   "name": "readable-from-web",
-  "type": "commonjs",
+  "type": "module",
   "version": "1.0.0",
   "packageManager": "yarn@4.12.0",
   "description": "Experimental converter from WHATWG ReadableStream to readable-stream Readable",

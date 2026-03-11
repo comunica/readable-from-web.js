@@ -5,7 +5,7 @@
       "ES2023",
       "DOM"
     ],
-    "module": "commonjs",
+    "module": "umd",
     "moduleResolution": "node",
     "strict": true,
     "declaration": true,
@@ -13,8 +13,7 @@
     "noImplicitAny": true,
     "importHelpers": false,
     "inlineSources": false,
-    "removeComments": true,
-    "resolveJsonModule": true
+    "removeComments": true
   },
   "include": [
     "./lib/*.ts"
