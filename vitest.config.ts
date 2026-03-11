@@ -9,6 +9,10 @@ const browsers: ('chromium' | 'firefox' | 'webkit')[] = [
 
 export default defineConfig({
   build: {
+    lib: {
+      entry: 'lib/index',
+      formats: [ 'umd' ]
+    },
     minify: false,
     target: 'ES2023'
   },
