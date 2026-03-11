@@ -2,7 +2,7 @@
 
 import { expect, test } from 'vitest'
 import type { Readable } from 'readable-stream'
-import { readableFromWeb } from '../lib/ReadableFromWeb'
+import { readableFromWeb } from '..'
 
 // Helper types for linting in the tests
 type ReadableToWeb = (stream: Readonly<Readable>) => ReadableStream;
