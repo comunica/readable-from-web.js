@@ -1,25 +1,12 @@
 {
-  "compileOnSave": true,
-  "compilerOptions": {
-    "target": "es2021",
-    "lib": [
-      "es2021",
-      "dom"
-    ],
-    "module": "commonjs",
-    "strict": true,
-    "noImplicitAny": true,
-    "declaration": true,
-    "importHelpers": false,
-    "inlineSources": true,
-    "preserveConstEnums": true,
-    "removeComments": false,
-    "sourceMap": true
-  },
+  "extends": "./tsconfig.build.json",
   "include": [
-    "./lib/*.ts"
+    "eslint.config.ts",
+    "vitest.config.ts",
+    "lib/*.ts",
+    "test/*.ts"
   ],
   "exclude": [
-    "./lib/*.d.ts"
+    "lib/*.d.ts"
   ]
 }
