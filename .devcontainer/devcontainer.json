@@ -1,8 +1,6 @@
 {
-  "name": "Alpine Linux Node 24",
-  "build": {
-    "dockerfile": "./Dockerfile"
-  },
+  "name": "Node.js & TypeScript",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:latest",
   "customizations": {
     "vscode": {
       "extensions": [
