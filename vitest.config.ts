@@ -13,6 +13,16 @@ export default defineConfig({
     target: compilerOptions.target
   },
   test: {
+    coverage: {
+      thresholds: {
+        autoUpdate: true,
+        branches: 100,
+        functions: 100,
+        lines: 100,
+        perFile: true,
+        statements: 100
+      }
+    },
     projects: [
       ...browsers.map(browser => ({
         test: {
