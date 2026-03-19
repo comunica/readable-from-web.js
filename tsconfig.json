@@ -1,12 +1,9 @@
 {
   "extends": "./tsconfig.build.json",
   "include": [
-    "eslint.config.ts",
-    "vitest.config.ts",
-    "lib/*.ts",
-    "test/*.ts"
+    "**/*.ts"
   ],
   "exclude": [
-    "lib/*.d.ts"
+    "**/*.d.ts"
   ]
 }

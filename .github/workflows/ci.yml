@@ -71,7 +71,12 @@ jobs:
       - run: yarn install --immutable
       - run: yarn run build
       - run: yarn playwright install --with-deps ${{ matrix.browser }}
-      - run: yarn vitest run --project ${{ matrix.browser }}
+      - run: yarn vitest run --project ${{ matrix.browser }} --coverage
+      - uses: coverallsapp/github-action@v2
+        with:
+          github-token: ${{ secrets.github_token }}
+          flag-name: browser-${{ matrix.browser }}
+          parallel: true
 
   coveralls:
     needs:
