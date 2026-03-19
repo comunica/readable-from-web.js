@@ -9,7 +9,6 @@
         "ms-azuretools.vscode-containers"
       ],
       "settings": {
-        "chat.disableAIFeatures": true,
         "editor.formatOnSave": true,
         "eslint.format.enable": true,
         "eslint.validate": [
