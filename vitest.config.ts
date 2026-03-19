@@ -14,8 +14,6 @@ export default defineConfig({
   },
   test: {
     coverage: {
-      enabled: true,
-      include: ['**/*.ts'],
       provider: 'istanbul',
       thresholds: {
         autoUpdate: true,
