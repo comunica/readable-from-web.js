@@ -46,7 +46,7 @@ jobs:
       - run: corepack enable
       - run: yarn install --immutable
       - run: yarn run build
-      - run: yarn vitest run --project node --coverage
+      - run: yarn vitest run --project node
       - uses: coverallsapp/github-action@v2
         with:
           github-token: ${{ secrets.github_token }}
@@ -71,7 +71,7 @@ jobs:
       - run: yarn install --immutable
       - run: yarn run build
       - run: yarn playwright install --with-deps ${{ matrix.browser }}
-      - run: yarn vitest run --project ${{ matrix.browser }} --coverage
+      - run: yarn vitest run --project ${{ matrix.browser }}
       - uses: coverallsapp/github-action@v2
         with:
           github-token: ${{ secrets.github_token }}
