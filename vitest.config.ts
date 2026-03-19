@@ -1,12 +1,12 @@
-import { compilerOptions } from './tsconfig.build.json'
-import { defineConfig } from 'vitest/config'
-import { playwright } from '@vitest/browser-playwright'
+import { compilerOptions } from './tsconfig.build.json';
+import { defineConfig } from 'vitest/config';
+import { playwright } from '@vitest/browser-playwright';
 
 const browsers: ('chromium' | 'firefox' | 'webkit')[] = [
   'chromium',
   'firefox',
   'webkit'
-]
+];
 
 export default defineConfig({
   build: {
@@ -46,4 +46,4 @@ export default defineConfig({
       }
     ]
   }
-})
+});
