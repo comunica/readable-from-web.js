@@ -5,8 +5,7 @@
     "vscode": {
       "extensions": [
         "dbaeumer.vscode-eslint",
-        "github.vscode-github-actions",
-        "ms-azuretools.vscode-containers"
+        "github.vscode-github-actions"
       ],
       "settings": {
         "editor.formatOnSave": true,
