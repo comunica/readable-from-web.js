@@ -1,6 +1,6 @@
 {
   "name": "Node.js & TypeScript",
-  "image": "mcr.microsoft.com/devcontainers/typescript-node:24-dev",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:dev-24",
   "customizations": {
     "vscode": {
       "extensions": [
