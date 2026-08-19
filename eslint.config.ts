@@ -5,11 +5,9 @@ import { configs as tsConfigs } from 'typescript-eslint';
 
 export default defineConfig(
   globalIgnores([
-    '.yarn',
-    'coverage',
-    'node_modules',
-    'old',
-    'old_packages'
+    '**/.yarn',
+    '**/coverage',
+    '**/*.js'
   ]),
   jsConfigs.recommended,
   tsConfigs.eslintRecommended,
